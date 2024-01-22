@@ -1,7 +1,7 @@
 name: Random Commit
 on:
   schedule: 
-    - cron: "0 */{{randomNumber(3,7)}} * * *"
+    - cron: "0 1/3 * * *"
 
 jobs:
 
@@ -28,7 +28,6 @@ jobs:
     - name: commit changes
       env:
         COMMIT_MESSAGE: "commit by bot"
-        randomNumber: ${{ steps.random.outputs.random }}
         
       run: |
         git config --global user.name 'irgiysalter' 
